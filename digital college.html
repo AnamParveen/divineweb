@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="divine.css"> -->
+    <link rel="stylesheet" href="footer.css">
+</head>
+<style>
+    /* Importing Google font - Open Sans */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+        background: #ecececdb;
+    }
+
+    nav {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #eef1f3;
+        position: relative;
+        height: 90px;
+    }
+
+    .logo {
+        color: #cf3030;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-left: 30px;
+
+    }
+
+    nav ul li {
+        list-style-type: none;
+        float: right;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #8f4242;
+        left: 30px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-icon i {
+        color: #ca3838;
+        font-size: 30px;
+    }
+
+    @media (max-width:600px) {
+        nav ul {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            text-align: center;
+            background: #dadada;
+            gap: 0;
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: 10px;
+        }
+
+        nav ul li {
+            padding: 20px;
+            padding-top: 0;
+
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        #menuList {
+            transition: all 0.5s;
+        }
+    }
+
+    .left img {
+
+        height: 80px;
+        width: 210px;
+    }
+
+    li a:hover {
+        color: red;
+        font-size: 30px;
+    }
+
+    .card-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        max-width: 1250px;
+        margin: 150px auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card-list .card-item {
+        background: #fff;
+        padding: 26px;
+        border-radius: 8px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+        list-style: none;
+        cursor: pointer;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: border 0.5s ease;
+    }
+
+    .card-list .card-item:hover {
+        border: 2px solid #000;
+    }
+
+    .card-list .card-item img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .card-list span {
+        display: inline-block;
+        background: #F7DFF5;
+        margin-top: 32px;
+        padding: 8px 15px;
+        font-size: 0.75rem;
+        border-radius: 50px;
+        font-weight: 600;
+    }
+
+    .card-list .developer {
+        background-color: #F7DFF5;
+        color: #B22485;
+    }
+
+    .card-list .designer {
+        background-color: #d1e8ff;
+        color: #2968a8;
+    }
+
+    .card-list .editor {
+        background-color: #d6f8d6;
+        color: #205c20;
+    }
+
+    .card-item h3 {
+        color: #000;
+        font-size: 1.438rem;
+        margin-top: 28px;
+        font-weight: 600;
+    }
+
+    .card-item .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-35deg);
+        height: 40px;
+        width: 40px;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 50%;
+        margin-top: 40px;
+        transition: 0.2s ease;
+    }
+
+    .card-list .card-item:hover .arrow {
+        background: #000;
+        color: #fff;
+    }
+
+    @media (max-width: 1200px) {
+        .card-list .card-item {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 980px) {
+        .card-list {
+            margin: 0 auto;
+        }
+    }
+
+
+    footer {
+        position: ;
+        bottom: 0;
+    }
+
+    @media (max-height:800px) {
+        footer {
+            position: static;
+        }
+    }
+
+    .footer-distributed {
+        background-color: #2d2a30;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    /* Footer left */
+
+    .footer-distributed .footer-left {
+        width: 30%;
+    }
+
+    .footer-distributed h3 {
+        color: #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0;
+    }
+
+
+    .footer-distributed h3 span {
+        color: #d4965c;
+    }
+
+    /* Footer links */
+
+    .footer-distributed .footer-links {
+        color: #ffffff;
+        margin: 20px 0 12px;
+    }
+
+    .footer-distributed .footer-links a {
+        display: inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .footer-distributed .footer-class-name {
+        color: #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    /* Footer Center */
+
+    .footer-distributed .footer-center {
+        width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+        background-color: #029dfd;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+        font-size: 17px;
+        line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+        color: #e0ac1c;
+        text-decoration: none;
+        ;
+    }
+
+    /* Footer Right */
+
+    .footer-distributed .footer-right {
+        width: 30%;
+    }
+
+    .footer-distributed .footer-class-about {
+        line-height: 20px;
+        color: #f6fbff;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-class-about span {
+        display: block;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+        margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a img {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        /* background-color: #33383b; */
+        border-radius: 2px;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+        margin: 10px;
+    }
+
+    .footer-distributed .footer-icons a:hover {
+        background-color:
+    }
+
+
+    @media (max-width: 880px) {
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right {
+            display: block;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-distributed .footer-center i {
+            margin-left: 0;
+        }
+    }
+
+    .footer-distributed .footer-icons {
+        margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        /* background-color: #33383b; */
+        border-radius: 2px;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+
+    .footer-distributed .footer-icons a:hover {
+        /* background-color: #3F71EA; */
+    }
+
+    .footer-links a:hover {
+        color: #3F71EA;
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="left"><img src="images/logo-no-background.png" href="index.html" alt="class logo"></div>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="digital college.html">Digital College</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+
+    <div class="card-list">
+        <a href="10th.html" class="card-item">
+            <img src="images/10thy class.png" alt="Card Image">
+            <span class="developer">10th Class</span>
+            <h3> Bachelor of Computer Applications.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="12th.html" class="card-item">
+            <img src="images/12 (1).png" alt="Card Image">
+            <span class="developer">12th Class</span>
+            <h3> Bachelor of Computer Applications.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="bca.html" class="card-item">
+            <img src="images/New folder/BCA-Course-Eligibilities.jpeg" alt="Card Image">
+            <span class="developer">BCA</span>
+            <h3> Bachelor of Computer Applications.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="mca.html" class="card-item">
+            <img src="images/mca-full-form.webp" alt="Card Image">
+            <span class="designer">MCA</span>
+            <h3> Master of Computer Applications.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="bba.html" class="card-item">
+            <img src="images/bba-courses.webp" alt="Card Image">
+            <span class="developer">BBA</span>
+            <h3>Bachelor of Business Administration.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a> <a href="mba.html" class="card-item">
+            <img src="images/mbadownload.jpg" alt="Card Image">
+            <span class="developer">MBA</span>
+            <h3>Master of Business Administration .</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a> <a href="b.com.html" class="card-item">
+            <img src="images/b.comimages (1).jpg" alt="Card Image">
+            <span class="developer">B.COM</span>
+            <h3> Bachelor of Commerce.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a> <a href="m.com.html" class="card-item">
+            <img src="images/M com.jpg" alt="Card Image">
+            <span class="developer">M.COM</span>
+            <h3>Master of Commerce.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="bscit.html" class="card-item">
+            <img src="images/B.Sc.IT" alt="Card Image">
+            <span class="editor">BSc IT</span>
+            <h3>Bachelor of Science in Information Technology.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a> <a href="msc.html" class="card-item">
+            <img src="images/msc-it-blog-1.jpg" alt="Card Image">
+            <span class="developer">MSc IT</span>
+            <h3> Master of Science in Information Technology.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a> <a href="ba.html" class="card-item">
+            <img src="images/BA.jpg" alt="Card Image">
+            <span class="developer">BA</span>
+            <h3>Bachelor of Arts.</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+    </div>
+
+    <marquee behavior="scroll" direction="left">
+        <img src="images/New folder/amity .uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/cu-logo.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/jain uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/iit.png" width="250" height="190" alt="Natural" />
+        <img src="images/New folder/liba.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/deakin.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/duke.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/bimtech.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/mum uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/amrita.uni.png " width="250" height="150" alt="Natural" />
+
+    </marquee>
+
+    <div>
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <h3>Divine <span>Educational Solutions</span></h3>
+
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    |
+                    <a href="about page.html">About</a>
+                    |
+                    <a href="Contact.html">Contact</a>
+                    |
+                    <a href="digital college.html">Digital College</a>
+                </p>
+
+                <p class="footer-class-name">Copyright © 2024 <strong>Divine Educational Solutions</strong> All rights
+                    reserved</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Jogeshwari West</span>
+                        Mumbai</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 9819358373 || +91 7666555191</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">indexedusol02@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="right"><img src="images/classlogo.png.jpeg" alt="class logo"></div>
+                <br><br>
+                <!-- <p class="footer-class-about">
+                        <span>About the Class</span>
+                        <strong>Index Educational Solutions</strong> . best learning computer course. The Only Course which
+                        teaches Office Skills, Smart Typing Skills, 21st Century Daily Life Skills, 21st Century Study
+                        Skills,
+                        Cyber Security Skills & Netiquettes, Basic IT Awareness.. and much more
+                    </p> -->
+                <div class="footer-icons"><br><br>
+                    <a href="www.facebook.com/indexeducationalsolutions"><i class="fa"><img src="images/fblogo.png"
+                                alt=""></i></a>
+                    <a href="https://www.instagram.com/index_edusolution?igsh=ZzYxdHZzN2xtNzV1"><i class="fa"><img
+                                src="images/insta.png" alt=""></i></a>
+                    <a href="https://web.telegram.org/a/#-1001399063675"><i class="fa"><img src="images/Telegram.png"
+                                alt=""></i></a>
+                    <a href="https://whatsapp.com/channel/0029Va40AAGAO7RBBrO3i23R"><i class="fa "><img
+                                src="images/whatsup.png" alt=""></i></a>
+                    <a href="https://youtube.com/@Dvine.edusol?si=sEnB3v8LerWYayMV"><i class="fa"></i><img
+                            src="images/youtube.png" alt=""></a>
+                </div>
+            </div>
+    </div>
+    </footer>
+    </div>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "300px";
+            }
+            else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .div {
+        height: 300px;
+        width: 300px;
+        display: inline-block;
+        flex-wrap: wrap;
+        border: black;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        /* margin-left: 10px; */
+        margin-right: 10px;
+        background-color: white;
+    }
+
+    @media (max-width: 800px) {
+        .div {
+            flex: 50%;
+            max-width: 50%;
+        }
+    }
+
+    .digree>div img {
+        border: black;
+        height: 200px;
+        width: 200px;
+        margin: 10px;
+        object-fit: fill;
+
+
+    }
+</style>
+
+<body>
+    <div class="digree">
+        <div class="div"><img src="images/New folder/BCA-Course-Eligibilities.jpeg" alt=""></div>
+        <div class="div"><img src="images/MCA-mob.jpg" alt=""></div>
+        <div class="div"><img src="images/BBA-Course-Landing.jpg" alt=""></div>
+        <div class="div"><img src="images/b.comimages (1).jpg" alt=""></div>
+        <div class="div"><img src="images/mbadownload.jpg" alt=""></div>
+        <div class="div"><img src="" alt=""></div>
+    </div>
+</body>
+
+</html> -->

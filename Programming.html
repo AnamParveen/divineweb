@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="file.css">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        height: 200px;
+        width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      
+       
+    }
+
+    *,
+    *:before,
+    *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+
+
+
+    .popup {
+        background-color: #ffffff;
+        height: 400px;
+        width: 650px;
+        padding: 30px 40px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        display: none;
+        text-align: left;
+        border: black;
+        position: fixed;
+    }
+
+    .popup button {
+        display: block;
+        margin: 0 0 20px auto;
+        background-color: transparent;
+        font-size: 30px;
+        color: #c5c5c5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: auto;
+        padding: 20px;
+    }
+
+    .popup p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 20px 0;
+        line-height: 25px;
+    }
+
+    /* 
+    a {
+        display: block;
+        width: 150px;
+        position: relative;
+        margin: 10px auto;
+        text-align: center;
+        background-color: #0f72e5;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 0;
+    } */
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 15px 20px;
+        /* margin: 8px 0; */
+
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: rgb(246, 228, 228);
+    }
+
+    nav {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        position: relative;
+        height: 90px;
+        width: 1222px;
+        position: fixed;
+    }
+
+    .logo {
+        color: #cf3030;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-left: 30px;
+
+    }
+
+    nav ul li {
+        list-style-type: none;
+        float: right;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #8f4242;
+        left: 30px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-icon i {
+        color: #ca3838;
+        font-size: 30px;
+    }
+
+    @media (max-width:600px) {
+        nav ul {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            text-align: center;
+            background: #c2d6e6;
+            gap: 0;
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: 10px;
+        }
+
+        nav ul li {
+            padding: 20px;
+            padding-top: 0;
+
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        #menuList {
+            transition: all 0.5s;
+        }
+    }
+
+    .left img {
+
+        height: 80px;
+        width: 210px;
+    }
+
+    li a:hover {
+        color: red;
+        font-size: 30px;
+    }
+</style>
+
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="left"><img src="images/logo-no-background.png" alt="class logo"></div>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="online learning.html">Digital College</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+
+
+    <div class="popup">
+        <button id="close">&times;</button>
+
+        <form>
+            <label for="fname"> Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your Name..">
+
+            <label for="lname"> Number</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your Number..">
+
+
+
+            <label for="country">Programming Courses</label>
+            <select id="country" name="country">
+
+                <option value="">C/C++/C# Programming</option>
+                <option value="">JAVA</option>
+                <option value="">PYTHON</option>
+                <option value="">ORACLE</option>
+                <option value="">PHP</option>
+                <option value="">MICROSOFT.NET</option>
+                <option value="">MS SQL SERVER</option>
+                <option value="">JS/HMML5/CSS3</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br><br><br><br>
+    <!-- <h1 style="text-align: center;color: blue;">Programming Courses</h1> -->
+    <img src="images/progr.png" alt="">
+
+    <section class="sec2">
+
+        <div class="bss">
+            <img class="img" src="images/c download.png" alt="img" height="150px">
+            <h2 style="text-align:center">C Programming</h2>
+
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+
+            <img class="img" src="images/cpp.png" alt="img" height="150px">
+            <h2 style="text-align:center">C++ Programming</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+            <img class="img" src="images/C_Sharp_Logo_2023.svg" alt="img" height="150px">
+            <h2 style="text-align:center">C# Programming</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+
+        <div class="bss">
+            <img class="img" src="images/python.jpg" alt="img" height="150px">
+            <h2 style="text-align:center">Python Programming</h2>
+
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+
+            <img class="img"
+                src="https://cdn.mindbowser.com/wp-content/uploads/2021/02/03205106/Java-Vs-Java-script.jpeg" alt="img"
+                height="150px">
+            <h2 style="text-align:center">Java & JavaScript</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+            <img class="img" src="images/css3.png" alt="img" height="150px">
+            <h2 style="text-align:center">CSS & CSS3</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+
+        <div class="bss">
+            <img class="img" src="images/html5 .jpeg" alt="img" height="150px">
+            <h2 style="text-align:center">HTML & HTML5</h2>
+
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+
+            <img class="img" src="images/php-programming-language.jpg" alt="img" height="150px">
+            <h2 style="text-align:center">PHP</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+            <img class="img" src="images/ORACLE.png" alt="img" height="150px">
+            <h2 style="text-align:center"> ORACLE</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+
+        <div class="bss">
+
+            <img class="img" src="images/microsoft-net.svg" alt="img" height="150px">
+            <h2 style="text-align:center">MicroSoft.NET</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+            <img class="img"
+                src="https://media.designrush.com/articles/101246/conversions/app-development-process-details.jpg"
+                alt="img" height="150px">
+            <h2 style="text-align:center">Mobile App Devlopment</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+        <div class="bss">
+            <img class="img" src="images/mysql-server-in4system.jpg" alt="img" height="150px">
+            <h2 style="text-align:center">Ms Sql Server</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+    </section>
+
+    <!--Script-->
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                1000
+            )
+        });
+
+
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Testimonials</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .testimonial-container {
+        max-width: 600px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .testimonial {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .testimonial img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <img id="student-img" src="" alt="Student Image">
+            <h3 id="student-name"></h3>
+            <p id="course"></p>
+            <p id="feedback"></p>
+        </div>
+        <div class="navigation">
+            <button id="prev" onclick="prevTestimonial()">Previous</button>
+            <button id="next" onclick="nextTestimonial()">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const testimonials = [
+            { img: 'images/anuu.jpg', name: 'Anam Parveen', course: 'BCA Student', feedback: 'I studying BCA 2nd year.  My all the coding concept are very much clear.  I recommend all to join BCA.' },
+            { img: 'images/ALMAS.PNG', name: 'Almas Shaikh', course: 'MCA Student ', feedback: 'The supportive environment at Divine Educational Solutions made my transition from being a student of basic computer course to MCA seamless. The institute focus on practical skills alongside theoretical knowledge gave me a competitive edge, enabled me to kick start my career in MCA program.' },
+            { img: 'images/anjali.png', name: 'Anjali poojari', course: 'Teacher + Graphic Designer', feedback: 'Completed my MS-CIT and Diploman in Graphic Desigining.  Now I teach the student the same, and for passive income I design T-Shirts.  Divine Educational Solutions has guided me towards this beautiful platform.' },
+            { img: 'images/New folder/Oves Bhai .jpeg', name: 'Oves Seliya', course: 'MCA Student', feedback: 'I had left my studys after 12th class then I met Maam she guided me with value of Education with her guidance I talk admission in B.com as time passed the intrest of coding language increase then I through a become a programmer again Maam Guided me join MCA.' },
+            { img: 'images/New folder/Husain.jpeg', name: 'Husain', course: 'BBA Student', feedback: 'I completed my MS-CIT course, now doing BBA with the institute, they teach very well and good hands on practical.  The future with Divine Educational Solutions is very bright.  Giving 5 Star rating.' },
+            { img: 'images/New folder/Javed uncle.jpeg', name: 'Javed Khan', course: 'Hardware Engineer', feedback: 'BSc-IT (CSA) Learning Was Fun With All Practical Knowledge. All Maam and Sir Were very Helpful. They Cleared All My Doubts, May it be a silly. Today I am a successfull Hardware Engineer.' },
+        ];
+
+        let currentIndex = 0;
+
+        function displayTestimonial(index) {
+            const testimonial = testimonials[index];
+            document.getElementById('student-img').src = testimonial.img;
+            document.getElementById('student-name').textContent = testimonial.name;
+            document.getElementById('course').textContent = testimonial.course;
+            document.getElementById('feedback').textContent = testimonial.feedback;
+        }
+
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            displayTestimonial(currentIndex);
+        }
+
+        function prevTestimonial() {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            displayTestimonial(currentIndex);
+        }
+
+        // Display initial testimonial
+        displayTestimonial(currentIndex);
+
+    </script>
+</body>
+
+</html>

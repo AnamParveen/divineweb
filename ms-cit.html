@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="file.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Document</title>
+</head>
+<style>
+
+    img {
+        height: 150px;
+        width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        /* margin-top: 50px; */
+    }
+
+    *,
+    *:before,
+    *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    .popup {
+        background-color: #ffffff;
+        height: 400px;
+        width: 650px;
+        padding: 30px 40px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        display: none;
+        text-align: left;
+        position: fixed;
+    }
+
+    .popup button {
+        display: block;
+        margin: 0 0 20px auto;
+        background-color: transparent;
+        font-size: 30px;
+        color: #c5c5c5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: auto;
+    }
+
+    .popup p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 20px 0;
+        line-height: 25px;
+    }
+
+    /* 
+    a {
+        display: block;
+        width: 150px;
+        position: relative;
+        margin: 10px auto;
+        text-align: center;
+        background-color: #0f72e5;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 0;
+    } */
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        /* margin: 8px 0; */
+
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: rgb(246, 228, 228);
+    }
+
+    nav {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        position: relative;
+        height: 90px;
+        width: 1222px;
+        position: fixed;
+    }
+
+    .logo {
+        color: #cf3030;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-left: 30px;
+
+    }
+
+    nav ul li {
+        list-style-type: none;
+        float: right;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #8f4242;
+        left: 30px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-icon i {
+        color: #ca3838;
+        font-size: 30px;
+    }
+
+    @media (max-width:600px) {
+        nav ul {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            text-align: center;
+            background: #c2d6e6;
+            gap: 0;
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: 10px;
+        }
+
+        nav ul li {
+            padding: 20px;
+            padding-top: 0;
+
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        #menuList {
+            transition: all 0.5s;
+        }
+    }
+
+    .left img {
+
+        height: 80px;
+        width: 210px;
+    }
+
+    li a:hover {
+        color: red;
+        font-size: 30px;
+    }
+    .logoms{
+        margin-top: 100px;
+    
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="left"><img src="images/logo-no-background.png" alt="class logo"></div>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="digree.html">Digital College</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    <div class="popup">
+        <button id="close">&times;</button>
+
+        <form>
+            <label for="fname"> Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your Name..">
+
+            <label for="lname"> Number</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your Number..">
+
+
+
+            <label for="country">Courses</label>
+            <select id="country" name="country">
+                <option value="bca">MS-CIT</option>
+
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <!-- <h1 style="text-align: center;color: orange;">MS-CIT Content</h1> -->
+    <br><br><br><br>
+    <img class="logoms" src="images/ms-cit.png" alt="">
+    <section class="sec2">
+
+        <div class="bss">
+            <img class="img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc-VX0p9KlGTCkGIDciCPSp0uUVeDBg7Xm_Q&usqp=CAU"
+                alt="img" height="150px">
+            <h2 style="text-align:center">21st Century 'JOB READINESS'</h2>
+            <!-- 
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        -->
+        </div>
+
+        <div class="bss">
+
+            <img class="img" src="https://www.smarttouchtyping.com/assets/stt-logo.png" alt="img" height="150px">
+            <h2 style="text-align:center">Smart Typing Skills</h2>
+            <!--  
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        -->
+        </div>
+
+        <div class="bss">
+            <img class="img"
+                src="https://d7c2r9g9.rocketcdn.me/wp-content/uploads/How-to-turn-Chrome-into-an-MS-office-alternative.png"
+                alt="img" height="150px">
+            <h2 style="text-align:center">MS-Office & Google Tool</h2>
+            <!--  
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        -->
+        </div>
+
+
+        <div class="bss">
+            <img class="img"
+                src="https://jworldtimes.com/old-site/wp-content/uploads/2020/12/21-century-learning-skills-Lingokids.png"
+                alt="img" height="150px">
+            <h2 style="text-align:center">21st Century Study Skills</h2>
+            <!-- 
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        -->
+        </div>
+
+        <div class="bss">
+
+            <img class="img" src="images/neti.download.png" alt="img" height="150px">
+            <h2 style="text-align:center">Netiquette & Ergonomics</h2>
+            <!--  
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        -->
+        </div>
+
+        <div class="bss">
+            <img class="img" src="https://miro.medium.com/v2/resize:fit:1024/1*tvNdLJSJ7WbXXbqHet3_GQ.png" alt="img"
+                height="150px">
+            <h2 style="text-align:center">IT Intro Software & Hardware</h2>
+            <!--  
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+     -->
+        </div>
+
+
+        <div class="bss">
+            <img class="img"
+                src="data:image/png;base64,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"
+                alt="img" height="150px">
+            <h2 style="text-align:center">Knowledge Of (Cyber Security)</h2>
+            <!--  
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+  -->
+        </div>
+
+        <div class="bss">
+
+            <img class="img"
+                src="https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-applyonline-icon-png-image_1025324.jpg"
+                alt="img" height="150px">
+            <h2 style="text-align:center">Knowledge Of Application</h2>
+            <!--  
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+ -->
+        </div>
+        <br><br><br><br>
+
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div>
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <h3>Divine <span>Educational Solutions</span></h3>
+
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    |
+                    <a href="about page.html">About</a>
+                    |
+                    <a href="Contact.html">Contact</a>
+                    |
+                    <a href="se">Services</a>
+                </p>
+
+                <p class="footer-class-name">Copyright © 2024 <strong>Divine Educational Solutions</strong> All rights
+                    reserved</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Jogeshwari West</span>
+                        Mumbai</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 9819358373 || +91 7666555191</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">divineedusol02@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="right"><img src="images/classlogo.png.jpeg" alt="class logo"></div>
+
+                <!-- <p class="footer-class-about">
+                    <span>About the Class</span>
+                    <strong>Index Educational Solutions</strong> . best learning computer course. The Only Course which
+                    teaches Office Skills, Smart Typing Skills, 21st Century Daily Life Skills, 21st Century Study
+                    Skills,
+                    Cyber Security Skills & Netiquettes, Basic IT Awareness.. and much more
+                </p> -->
+                <br><br>
+
+
+                <div class="footer-icons"><br><br>
+                    <a href="www.facebook.com/indexeducationalsolutions"><i class="fa"><img src="images/fblogo.png"
+                                alt=""></i></a>
+                    <a href="https://www.instagram.com/index_edusolution?igsh=ZzYxdHZzN2xtNzV1"><i class="fa"><img
+                                src="images/insta.png" alt=""></i></a>
+                    <a href="https://web.telegram.org/a/#-1001399063675"><i class="fa"><img src="images/Telegram.png"
+                                alt=""></i></a>
+                    <a href="https://whatsapp.com/channel/0029Va40AAGAO7RBBrO3i23R"><i class="fa "><img
+                                src="images/whatsup.png" alt=""></i></a>
+                    <a href="https://youtube.com/@Dvine.edusol?si=sEnB3v8LerWYayMV"><i class="fa"></i><img
+                            src="images/youtube.png" alt=""></a>
+                </div>
+            </div>
+    </div>
+    </footer>
+    </div>
+    <!--Script-->
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                1000
+            )
+        });
+
+
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

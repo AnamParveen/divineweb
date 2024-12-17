@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="file.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Document</title>
+</head>
+
+<style>
+    img {
+        height: 200px;
+        width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      
+       
+    }
+
+    nav {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        position: relative;
+        height: 90px;
+        width: 1222px;
+        position: fixed;
+    }
+
+    .logo {
+        color: #cf3030;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-left: 30px;
+
+    }
+
+    nav ul li {
+        list-style-type: none;
+        float: right;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #8f4242;
+        left: 30px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-icon i {
+        color: #ca3838;
+        font-size: 30px;
+    }
+
+    @media (max-width:600px) {
+        nav ul {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            text-align: center;
+            background: #c2d6e6;
+            gap: 0;
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: 10px;
+        }
+
+        nav ul li {
+            padding: 20px;
+            padding-top: 0;
+
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        #menuList {
+            transition: all 0.5s;
+        }
+    }
+
+    .left img {
+
+        height: 80px;
+        width: 210px;
+    }
+
+    li a:hover {
+        color: red;
+        font-size: 30px;
+    }
+    
+    *,
+    *:before,
+    *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+
+
+
+    .popup {
+        background-color: #ffffff;
+        height: 400px;
+        width: 650px;
+        padding: 30px 40px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        display: none;
+        text-align: left;
+        border: black;
+        position: fixed;
+    }
+
+    .popup button {
+        display: block;
+        margin: 0 0 20px auto;
+        background-color: transparent;
+        font-size: 30px;
+        color: #c5c5c5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: auto;
+        padding: 20px;
+    }
+
+    .popup p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 20px 0;
+        line-height: 25px;
+    }
+
+    /* 
+    a {
+        display: block;
+        width: 150px;
+        position: relative;
+        margin: 10px auto;
+        text-align: center;
+        background-color: #0f72e5;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 0;
+    } */
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 15px 20px;
+        /* margin: 8px 0; */
+
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: rgb(246, 228, 228);
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="left"><img src="images/logo-no-background.png" alt="class logo"></div>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="online learning.html">Digital College</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    
+    <div class="popup">
+    <button id="close">&times;</button>
+
+    <form>
+        <label for="fname"> Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your Name..">
+
+        <label for="lname"> Number</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your Number..">
+
+
+
+        <label for="country">Programming Courses</label>
+        <select id="country" name="country">
+          
+            <option value="">C/C++/C# Programming</option>
+            <option value="">JAVA</option>
+            <option value="">PYTHON</option>
+            <option value="">ORACLE</option>
+            <option value="">PHP</option>
+            <option value="">MICROSOFT.NET</option>
+            <option value="">MS SQL SERVER</option>
+            <option value="">JS/HMML5/CSS3</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<br><br><br><br>
+    <!-- <h1 style="text-align: center;color: blue;">Graphic  Designing Courses</h1> -->
+    <img src="images/gd logo.png" alt="">
+
+
+    <section class="sec2">
+
+        <div class="bss">
+            <img class="img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png"
+                alt="img" height="150px">
+            <h2 style="text-align:center">PhotoShop</h2>
+
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+
+            <img class="img"
+                src="https://media.licdn.com/dms/image/D4E12AQH_3V0tgp3aUA/article-cover_image-shrink_720_1280/0/1689285474001?e=2147483647&v=beta&t=UaxRkJ4HlGd6O3LtddLPGDPuZcJLKFshOYZnPQzIs_U"
+                alt="img" height="150px">
+            <h2 style="text-align:center">CorelDRAW</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+            <img class="img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/640px-Adobe_Premiere_Pro_CC_icon.svg.png"
+                alt="img" height="150px">
+            <h2 style="text-align:center">Premiere pro</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+
+        <div class="bss">
+            <img class="img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Adobe_InDesign_CC_icon.svg/800px-Adobe_InDesign_CC_icon.svg.png"
+                alt="img" height="150px">
+            <h2 style="text-align:center">InDesign</h2>
+
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+
+            <img class="img"
+                src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab79fe85-9c37-4b69-88c4-1b311cc68a1e/dfocq9g-42bf6ff9-9d44-42a6-bdbb-96a8e41a3ad1.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FiNzlmZTg1LTljMzctNGI2OS04OGM0LTFiMzExY2M2OGExZVwvZGZvY3E5Zy00MmJmNmZmOS05ZDQ0LTQyYTYtYmRiYi05NmE4ZTQxYTNhZDEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.WtI5kSak4OWqeb3qcpxyT0eEq3qgbu9yEFZTrcbTLYw"
+                alt="img" height="150px">
+            <h2 style="text-align:center">3D Artist (Texturing & Lighting)</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+            <img class="img" src="https://pbs.twimg.com/media/EKrKRY2UUAA2eJS?format=jpg&name=4096x4096" alt="img"
+                height="150px">
+            <h2 style="text-align:center">Animator</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+
+        <div class="bss">
+            <img class="img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/1200px-Adobe_Illustrator_CC_icon.svg.png"
+                alt="img" height="150px">
+            <h2 style="text-align:center">Illustrator</h2>
+
+            <center><input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+
+            <img class="img"
+                src="data:image/png;base64,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"
+                alt="img" height="150px">
+            <h2 style="text-align:center">DreamWeaver</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+
+        <div class="bss">
+
+            <img class="img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/1200px-Adobe_After_Effects_CC_icon.svg.png"
+                alt="img" height="150px">
+            <h2 style="text-align:center">After Effect</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+        <div class="bss">
+
+            <img class="img" src="https://cdn.80.lv/api/upload/content/b1/images/62fdb349291e0/widen_920x0.jpeg"
+                alt="img" height="150px">
+            <h2 style="text-align:center">3D Artist (modeling)</h2>
+
+            <center> <input type="button" value="Enroll Now" class="btt"></center>
+        </div>
+    </section>
+	<div>
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <h3>Divine <span>Educational Solutions</span></h3>
+
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    |
+                    <a href="about page.html">About</a>
+                    |
+                    <a href="Contact.html">Contact</a>
+                    |
+                    <a href="se">Services</a>
+                </p>
+
+                <p class="footer-class-name">Copyright © 2024 <strong>Divine Educational Solutions</strong> All rights
+                    reserved</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Jogeshwari West</span>
+                        Mumbai</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 9819358373 || +91 7666555191</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">divineedusol02@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="right"><img src="images/classlogo.png.jpeg" alt="class logo"></div>
+
+                <!-- <p class="footer-class-about">
+                    <span>About the Class</span>
+                    <strong>Index Educational Solutions</strong> . best learning computer course. The Only Course which
+                    teaches Office Skills, Smart Typing Skills, 21st Century Daily Life Skills, 21st Century Study
+                    Skills,
+                    Cyber Security Skills & Netiquettes, Basic IT Awareness.. and much more
+                </p> -->
+                <br><br>
+
+
+                <div class="footer-icons"><br><br>
+                    <a href="www.facebook.com/indexeducationalsolutions"><i class="fa"><img src="images/fblogo.png"
+                                alt=""></i></a>
+                    <a href="https://www.instagram.com/index_edusolution?igsh=ZzYxdHZzN2xtNzV1"><i class="fa"><img
+                                src="images/insta.png" alt=""></i></a>
+                    <a href="https://web.telegram.org/a/#-1001399063675"><i class="fa"><img src="images/Telegram.png"
+                                alt=""></i></a>
+                    <a href="https://whatsapp.com/channel/0029Va40AAGAO7RBBrO3i23R"><i class="fa "><img
+                                src="images/whatsup.png" alt=""></i></a>
+                    <a href="https://youtube.com/@Dvine.edusol?si=sEnB3v8LerWYayMV"><i class="fa"></i><img
+                            src="images/youtube.png" alt=""></a>
+                </div>
+            </div>
+    </div>
+    </footer>
+    </div>
+    <!--Script-->
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                1000
+            )
+        });
+
+
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

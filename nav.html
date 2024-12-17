@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+    height: 70px;
+    background-color: #fff;
+    box-shadow: #000000;
+    /* border: 2px solid #397ef6; */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    border-radius: 5px;
+      }
+      .logo{
+        flex-basis: 15%;
+      }
+      .logo img{
+        width: 170px;
+        cursor: pointer;
+      }
+  
+      .menu{
+        flex: 1;
+        align-items: center;
+        text-align: right;
+      }
+      .menu ul li{
+  display: inline-block;
+  list-style: none;
+  font-size: 1.1rem;
+  margin: 0 10px;
+  cursor: pointer;
+  position: relative;
+  }
+  .menu ul li a{
+    text-decoration: none;
+    color:#000;
+  }
+  .navbar .menu button{
+    height: 50px;
+    width: 100px;
+    background-color: #397ef6;
+    border-radius: 5px;
+    border-color: transparent;
+    color: #fff;
+  
+  }
+  .navbar .menu button:hover{
+    background-color: transparent;
+    border: 2px solid #000;
+    color: #000;
+  
+  }
+  .menu  button a{
+    color: #000;
+    text-decoration: none;
+  }
+  .menu ul li:after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background:#397ef6;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+  }
+  .menu ul li:hover::after{
+  width:100%;
+  }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="divine-educational-solutions-low-resolution-logo-color-on-transparent-background - Copy.png" alt="classlogo" height="50px">
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="">Courses</a>
+                </li>
+                <li>
+                    <a href="">Services</a>
+                </li>
+                <li>
+                    <a href="classform.html">Contact</a>
+                </li>
+                <!-- <a href="classform.html"><button>Sign Up</button></a> -->
+            </ul>
+        </div>
+</body>
+</html>

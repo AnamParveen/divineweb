@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        /* height: 100%; */
+        /* width: 100%; */
+        /* background: #3498db; */
+
+        background: linear-gradient(rgb(255, 253, 253), rgb(152, 181, 202));
+
+    }
+
+    nav {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #eef1f3;
+        position: relative;
+        height: 90px;
+    }
+
+    .logo {
+        color: #cf3030;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    nav ul li {
+        list-style-type: none;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #8f4242;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-icon i {
+        color: #ca3838;
+        font-size: 30px;
+    }
+
+    @media (max-width:600px) {
+        nav ul {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            text-align: center;
+            background: white;
+            gap: 0;
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: 10px;
+        }
+
+        nav ul li {
+            padding: 20px;
+            padding-top: 0;
+
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        #menuList {
+            transition: all 0.5s;
+        }
+    }
+
+    .left img {
+
+        height: 80px;
+        width: 210px;
+    }
+
+    li a:hover {
+        color: red;
+        font-size: 30px;
+    }
+
+    .img {
+        height: 300px;
+        width: 300px;
+        margin-top: 30px;
+        margin-left: 70px;
+        margin-right: 30px;
+
+    }
+
+    h1 {
+        color: green;
+    }
+
+    img {
+        float: left;
+        margin: 5px;
+        height: 350px;
+        width: 450px;
+    }
+
+    p {
+        text-align: justify;
+        font-size: 25px;
+    }
+
+    .testimonial-container {
+        max-width: 600px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .testimonial {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .testimonial img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="left"><img src="images/logo-no-background.png" alt="class logo"></div>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="digital college.html">Digtal College</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    <div class="square">
+        <div>
+            <img src="images/edu.jpg" alt="img">
+        </div>
+        <p><strong> Divine Educational Solutions</strong>, a computer teaching institute. The <strong>
+                owner
+                Mrs. Mariam Arkate</strong> follows
+            the footsteps of her mother. Her mother was very keen to educate the girl. She said that girls
+            should be well educated. As the up bringing of the child is totally on the mother rather than
+            father. If the mother is well educated, she can help the child to cross all the hurdles in life.
+            <br><br>
+            A vision seen by the 3 main pillars of our family,<strong> Mr. Husain Arkate, (Late) Mrs. Halima
+                Arkate and
+                (Late) Mr. Nooruddin Arkate</strong> about computer literacy for the future generation. Back
+            in
+            2000, a first
+            step was initiated in rural areas in the name of Creative Technologies. The love with the native
+            place, the initiative was taken. In the past 25 years, thousands of students have benefited with
+            the
+            computer skills in different sectors and successfully working. <br><br>
+            As time passed, a new setup was initiated in <strong> Mumbai (Jogeshwari Area), as Divine
+                Educational
+                Solutions</strong>, with the computer literacy and skill development programme for the last
+            10
+            years. With
+            computer literacy, it has been transformed to Digital College (A dream of Mr. Nooruddin Arkate
+            to
+            build a college). <br><br>
+            The Arkate family holds a good place in society, with all the members of the family , engineers
+            and
+            doctors and other graduates. This family is always thinking about the uplift of education in
+            society. If the people in the society are educated, this will boost the development of the
+            nation.
+        </p>
+    </div>
+    
+</body>
+
+</html>

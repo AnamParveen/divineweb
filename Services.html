@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services Section with HTML and CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        background-image: linear-gradient(to right, #8B8ABB, #8AC59D);
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .container {
+        display: grid;
+
+    }
+
+    .container__box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 15px;
+    }
+
+    .container .container__box .box {
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 5px 5px 6px #333;
+        text-align: center;
+        padding: 20px 30px;
+        margin-left: 50px;
+        
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        transition: .2s, linear;
+    }
+
+    .container__heading {
+        text-align: center;
+        padding-bottom: 15px;
+        color: #e3e3e3;
+        text-shadow: 0 0 10px black;
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    .container .container__box .box h3 {
+        color: #444;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .container .container__box .box p {
+        font-size: 14px;
+        font-weight: 100;
+        color: #555;
+    }
+
+    .container .container__box .box a {
+        border-radius: 4px;
+        background: #444;
+        color: white;
+    }
+
+    .container .container__box .box a:hover {
+        background: #908080;
+    }
+    *,
+    *:before,
+    *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    .popup {
+        background-color: #ffffff;
+        height: 400px;
+        width: 650px;
+        padding: 30px 40px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        display: none;
+        text-align: left;
+        position: fixed;
+    }
+
+    .popup button {
+        display: block;
+        margin: 0 0 20px auto;
+        background-color: transparent;
+        font-size: 30px;
+        color: #c5c5c5;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: auto;
+    }
+
+    .popup p {
+        font-size: 14px;
+        text-align: justify;
+        margin: 20px 0;
+        line-height: 25px;
+    }
+
+    /* 
+    a {
+        display: block;
+        width: 150px;
+        position: relative;
+        margin: 10px auto;
+        text-align: center;
+        background-color: #0f72e5;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 5px 0;
+    } */
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        /* margin: 8px 0; */
+
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: rgb(246, 228, 228);
+    }
+/*     
+nav {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    position: relative;
+    height: 90px;
+  width: 1222px;
+  
+    position: fixed;
+} */
+
+nav {
+		padding: 10px 30px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: #eef1f3;
+		position: relative;
+		height: 90px;
+	}
+.logo {
+    color: #cf3030;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+ margin-left: 30px;
+    
+}
+
+nav ul li {
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8f4242;
+    left: 30px;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon i {
+    color: #ca3838;
+    font-size: 30px;
+}
+
+@media (max-width:600px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #c2d6e6;
+        gap: 0;
+        overflow: hidden;
+        font-size: 20px;
+        font-weight: 10px;
+    }
+
+    nav ul li {
+        padding: 20px;
+        padding-top: 0;
+        
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    #menuList {
+        transition: all 0.5s;
+    }
+}
+
+.left img {
+
+    height: 80px;
+    width: 210px;
+}
+ li a:hover{
+    color: red;
+    font-size: 30px;
+}
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="left"><img src="images/logo-no-background.png" alt="class logo"></div>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="digital college.html">Digital College</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+           
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+<body>
+    <div class="popup">
+        <button id="close">&times;</button>
+
+        <form>
+            <label for="fname"> Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your Name..">
+
+            <label for="lname"> Number</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your Number..">
+
+
+
+            <label for="country">E-mail</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your E-mail..">
+
+            <!-- <select id="country" name="country">
+                <option value="bca">BCA</option>
+                <option value="mca">MCA</option>
+                <option value="mba">MBA</option>
+                <option value="bca">BBA</option>
+                <option value="mca">B.com</option>
+                <option value="mba">M.com</option>
+                <option value="bca">BA</option>
+                <option value="mca">BSc IT</option>
+                <option value="mba">MSc IT</option>
+            </select> -->
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br><br><br><br>
+    <div class="container">
+        <h1 class="container__heading">Our Sevices</h1>
+        <div class="container__box">
+            <!-- HTML5 -->
+            <div class="box">
+                <img src="images/New folder/jobplacment.png" alt="">
+                <h3>JOB PLACEMENT</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, soluta.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <!-- CSS3 -->
+            <div class="box">
+                <img src="images/New folder/prog.png" alt="">
+                <h3>PROGRAMMING</h3>
+                <p>coding is a good career for the future. The technology industry is one that will define progress
+                    across the commercial sector. That makes coding a future-proof job profile where candidates will be
+                    able to find open roles across industries</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <!-- JavaScript -->
+            <div class="box">
+                <img src="images/New folder/digi mark.png" alt="">
+                <h3>DIGITAL MARKETING</h3>
+                <p>The global Digital Advertising and Marketing market has been on a remarkable growth trajectory. In
+                    2022, it was valued at a staggering $531 billion, and it's anticipated to reach a colossal $1.5
+                    trillion by 2030, growing at a substantial rate of 13.9% annually between 2022 and 2030.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <!-- SASS -->
+            <div class="box">
+                <img src="images/New folder/app de.png" alt="">
+                <h3>APP DEVELOPMENT</h3>
+                <p> mobile app developers are in high demand in the USA. With the increasing use of smartphones and
+                    mobile devices, mobile app development has become a critical aspect of business strategy for
+                    companies across various industries.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <!-- JQuery -->
+            <div class="box">
+                <img src="images/New folder/ser web.png" alt="">
+                <h3>WEB DEVELOPMENT</h3>
+                <p>According to a prominent marketing firm, IDC, there is expected to be a global shortage of 8.52
+                    million full-stack developers by 2025. With the changing technologies and increased use of digital
+                    services, the demand for robust apps and websites is touching the skies. Full-stack web development
+                    is gaining momentum.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <!-- React.Js -->
+            <div class="box">
+                <img src="images/New folder/graphic.png" alt="">
+                <h3>GRAPHIC DESIGNING</h3>
+                <p>The job outlook for graphic designers in 2024 is exceptionally promising. As businesses recognize the
+                    importance of visual communication in brand building, there is a consistent demand for skilled
+                    graphic designers across various industries</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+    
+    <!--Script-->
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                1000
+            )
+        });
+
+
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

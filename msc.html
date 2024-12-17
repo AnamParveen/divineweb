@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+
+
+</head>
+<style>
+    /* Importing Google font - Open Sans */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+        background: #ecececdb;
+    }
+
+    nav {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #eef1f3;
+        position: relative;
+        height: 90px;
+    }
+
+    .logo {
+        color: #cf3030;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin-left: 30px;
+
+    }
+
+    nav ul li {
+        list-style-type: none;
+        float: right;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #8f4242;
+        left: 30px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-icon i {
+        color: #ca3838;
+        font-size: 30px;
+    }
+
+    @media (max-width:600px) {
+        nav ul {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            text-align: center;
+            background: #dadada;
+            gap: 0;
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: 10px;
+        }
+
+        nav ul li {
+            padding: 20px;
+            padding-top: 0;
+
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        #menuList {
+            transition: all 0.5s;
+        }
+    }
+
+    .left img {
+
+        height: 80px;
+        width: 210px;
+    }
+
+    li a:hover {
+        color: red;
+        font-size: 30px;
+    }
+
+    footer {
+        position: ;
+        bottom: 0;
+    }
+
+    @media (max-height:800px) {
+        footer {
+            position: static;
+        }
+    }
+
+    .footer-distributed {
+        background-color: #2d2a30;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    /* Footer left */
+
+    .footer-distributed .footer-left {
+        width: 30%;
+    }
+
+    .footer-distributed h3 {
+        color: #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0;
+    }
+
+
+    .footer-distributed h3 span {
+        color: #d4965c;
+    }
+
+    /* Footer links */
+
+    .footer-distributed .footer-links {
+        color: #ffffff;
+        margin: 20px 0 12px;
+    }
+
+    .footer-distributed .footer-links a {
+        display: inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .footer-distributed .footer-class-name {
+        color: #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    /* Footer Center */
+
+    .footer-distributed .footer-center {
+        width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+        background-color: #029dfd;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+        font-size: 17px;
+        line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+        color: #e0ac1c;
+        text-decoration: none;
+        ;
+    }
+
+    /* Footer Right */
+
+    .footer-distributed .footer-right {
+        width: 30%;
+    }
+
+    .footer-distributed .footer-class-about {
+        line-height: 20px;
+        color: #f6fbff;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-class-about span {
+        display: block;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+        margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a img {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        /* background-color: #33383b; */
+        border-radius: 2px;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+        margin: 10px;
+    }
+
+    .footer-distributed .footer-icons a:hover {
+        background-color:
+    }
+
+
+    @media (max-width: 880px) {
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right {
+            display: block;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-distributed .footer-center i {
+            margin-left: 0;
+        }
+    }
+
+    .footer-distributed .footer-icons {
+        margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        /* background-color: #33383b; */
+        border-radius: 2px;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+
+    .footer-distributed .footer-icons a:hover {
+        /* background-color: #3F71EA; */
+    }
+
+    .footer-links a:hover {
+        color: #3F71EA;
+    }
+
+    .row {
+        width: 80%;
+        max-width: 1170px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        overflow-x: hidden;
+        padding: 5rem 0;
+    }
+
+    .row .imgwrapper {
+        overflow: hidden;
+    }
+
+    .row .imgwrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s;
+    }
+
+    .row .imgwrapper:hover img {
+        transform: scale(1.25);
+    }
+
+    .row .contentwrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 30px;
+    }
+
+    .row .contentwrapper span.textwrapper {
+        display: block;
+        font-size: 20px;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .row .contentwrapper h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: brown;
+        padding-bottom: 20px;
+    }
+
+    .row .contentwrapper p {
+        font-size: 16px;
+        line-height: 25px;
+        padding-bottom: 25px;
+    }
+
+    .row .contentwrapper a {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: rgb(32, 142, 239);
+        color: rgb(0, 246, 164);
+        padding: 15px 40px;
+        letter-spacing: 1px;
+        user-select: none;
+    }
+
+    @media (max-width:991px) {
+        .row {
+            grid-template-columns: 1fr;
+            grid-gap: 50px;
+        }
+
+        .row .contentwrapper {
+            padding-left: 0;
+        }
+    }
+
+    @media(max-width:768px) {
+        .row {
+            width: 90px;
+        }
+
+        .row .contentwrapper h2 {
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+
+        .row .contentwrapper p {
+            line-height: 24px;
+        }
+    }
+
+    @media (max-width:575) {
+        .row .contentwrapper span.textwrapper {
+
+            font-size: 20px;
+
+        }
+
+        .row .contentwrapper h2 {
+            font-size: 25px;
+
+        }
+
+        .row .contentwrapper p {
+            line-height: 24px;
+            font-size: 15px;
+        }
+
+        .row .contentwrapper a {
+            font-size: 15px;
+            padding: 10px 20px;
+        }
+    }
+
+    .option {
+        /* margin-right: 600px; */
+    }
+
+    .responsive {
+        /* width: 200%;/ */
+        /* max-width: 400vw; */
+        /* height: auto; */
+        /* object-fit: cover; */
+        /* margin-left: 80px; */
+
+    }
+
+    .para {
+        font-size: 2vw;
+        margin-left: 80px;
+
+    }
+
+    .btn {
+        height: 10vh;
+        width: 10vw;
+        margin-left: 130px;
+        background: #bd5050;
+        border-radius: 20px;
+    }
+
+    .btn:hover {
+        background: #dc4848;
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            <div class="left"><img src="images/logo-no-background.png" alt="class logo"></div>
+        </div>
+        <ul id="menuList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="digital college.html">Digital College</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="imgwrapper">
+            <img src="images/msc-it-blog-1.jpg" alt="" class="responsive" width="500" height="500">
+        </div>
+        <di class="contentwrapper">
+            <div class="content">
+                <span class="textwrapper">
+                </span>
+                <h2 style="font-size:2vw; margin-left:80px;">M.Sc.IT (Master of Science in Information Technology)</h2>
+                <p class="para">A Master of Science in Information Technology (M.Sc.IT) is a two-year post-graduate
+                    degree program that provides theoretical and practical knowledge in areas like software development,
+                    computer systems, and data mining. The program is designed to help students gain a good
+                    understanding of information technology and build a career in the IT industry.
+
+                </p>
+            </div>
+        </di>
+    </div>
+
+    <h1>Career options after M.Sc.IT:</h1><br><br>
+    <div class="option">
+        <span style='font-size:2vw;'>&#9205;Software Engineer</span><br>
+        <span style='font-size:2vw;'>&#9205;Interface Engineer</span><br>
+        <span style='font-size:2vw;'>&#9205;Java Developer</span><br>
+        <span style='font-size:2vw;'>&#9205;Project Manager</span><br>
+        <span style='font-size:2vw;'>&#9205;Information Security Analyst</span><br>
+        <span style='font-size:2vw;'>&#9205;IT Consultant</span><br>
+        <span style='font-size:2vw;'>&#9205;Network Administrator</span><br>
+    </div><br><br><br><br><br>
+    <button class="btn">Enquire Now</button>
+
+
+
+    <marquee behavior="scroll" direction="left">
+        <img src="images/New folder/cu-logo.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/jain uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/amrita.uni.png " width="250" height="150" alt="Natural" />
+        <img src="images/New folder/iit.png" width="250" height="190" alt="Natural" />
+        <img src="images/New folder/liba.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/deakin.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/duke.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/bimtech.uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/mum uni.png" width="250" height="150" alt="Natural" />
+        <img src="images/New folder/amity .uni.png" width="250" height="150" alt="Natural" />
+    </marquee>
+
+    <div>
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <h3>Divine <span>Educational Solutions</span></h3>
+
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    |
+                    <a href="#">About</a>
+                    |
+                    <a href="#">Contact</a>
+                    |
+                    <a href="#">Services</a>
+                </p>
+
+                <p class="footer-class-name">Copyright © 2024 <strong>Divine Educational Solutions</strong> All rights
+                    reserved</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Jogeshwari West</span>
+                        Mumbai</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 9819358373 || +91 7666555191</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">indexedusol02@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+
+                <br><br>
+
+
+                <div class="footer-icons"><br><br>
+                    <a href="www.facebook.com/indexeducationalsolutions"><i class="fa"><img src="images/fblogo.png"
+                                alt=""></i></a>
+                    <a href="https://www.instagram.com/index_edusolution?igsh=ZzYxdHZzN2xtNzV1"><i class="fa"><img
+                                src="images/insta.png" alt=""></i></a>
+                    <a href="https://web.telegram.org/a/#-1001399063675"><i class="fa"><img src="images/Telegram.png"
+                                alt=""></i></a>
+                    <a href="https://whatsapp.com/channel/0029Va40AAGAO7RBBrO3i23R"><i class="fa "><img
+                                src="images/whatsup.png" alt=""></i></a>
+                    <a href="https://youtube.com/@Dvine.edusol?si=sEnB3v8LerWYayMV"><i class="fa"></i><img
+                            src="images/youtube.png" alt=""></a>
+                </div>
+            </div>
+    </div>
+    </footer>
+    </div>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "300px";
+            }
+            else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

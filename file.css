@@ -1,0 +1,125 @@
+.sec2 {
+    height: 70vh;
+    background: white;
+    margin-top: 30PX;
+    margin-left: 80px;
+}
+
+.btn {
+    background-color: transparent;
+    border-style: solid;
+    height: 50px;
+    width: 120px;
+    margin-top: 270px;
+    align-items: center;
+    margin-left: 600px;
+    font-size: 15px;
+    color: #000;
+    list-style-type: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 15px;
+}
+
+.bss:hover {
+    box-shadow: 0 28px 106px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bss {
+    background-color: #fff;
+    height: 290px;
+    width: 290px;
+    margin-left: 70px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 7px 7px 5px rgb(120, 116, 116);
+    margin-top: 40px;
+}
+
+.bss2:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bss2 {
+    background-color: #fff;
+    height: 400px;
+    width: 350px;
+    margin-left: 50px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 7px 7px 5px rgb(120, 116, 116);
+    margin-top: 40px;
+
+}
+
+.bss3:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bss3 {
+    background-color: #fff;
+    height: 400px;
+    width: 350px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: 50px;
+    box-shadow: 7px 7px 5px rgb(120, 116, 116);
+    margin-top: 40px;
+
+}
+
+.img {
+    background: white;
+    align-items: center;
+    margin: 20px;
+    margin-left: 70px;
+    /* border-style: ridge; */
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+    font-size: medium;
+    color: #1d0394;
+}
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(116, 116, 234);
+    align-items: center;
+    margin-left: 130px;
+}
+
+.btt {
+    color: #fff;
+    background-color: #4f4d96;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    border-color: #5452df;
+    float: top 20px;
+}
+
+.btt:hover {
+    background-color: #fff;
+    color: #1d0394;
+
+}
+
+p {
+    color: #b8b7bc;
+    font-family: Arial, Helvetica, sans-serif;
+}

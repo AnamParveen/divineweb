@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--indexctorweb.com-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>Responsive Testimonial Carousel using Bootstrap & Owl Carousel 2</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="footer.css">
+	<link rel="stylesheet" href="testimonial.css">
+	<link rel="stylesheet" href="testinonial.js">
+</head>
+<style>
+	body {
+		font-family: 'Montserrat', sans-serif;
+		height: 100%;
+		width: 100%;
+		/* 		
+		background: linear-gradient(rgb(255, 253, 253), rgb(42, 110, 159)); */
+
+	}
+
+	.testimonial {
+		padding: 80px 0;
+	}
+
+	.sec-heading {
+		margin-bottom: 60px;
+	}
+
+	.sec-heading h6 {
+		font-family: allura;
+		font-weight: 900;
+		font-size: 80px;
+	}
+
+	.single-box {
+		border: 3px solid #e6f0fa;
+		padding: 50px 30px 40px;
+		border-radius: 20px;
+		background: #fff;
+	}
+
+	.img-area {
+		margin: 155px 0 20px;
+
+	}
+
+	.single-box img {
+		max-width: 250px;
+		border-radius: 50%;
+		margin: 0 auto
+	}
+
+	.single-box h4 {
+		font-weight: 600;
+		margin: 0;
+		font-family: 'Allura', cursive;
+		font-size: 35px;
+	}
+
+	.single-box {
+		overflow: hidden
+	}
+
+	.single-box .img-area {
+		width: 30%;
+		float: left;
+		margin: 0
+	}
+
+	.single-box .content {
+		width: 70%;
+		float: left;
+		padding-left: 10px
+	}
+
+	.single-box p {
+		margin: 10px 0 25px;
+		line-height: 2.3;
+	}
+
+	.testi-carousel-three .single-box {
+		border: 0;
+		padding: 0 50px;
+	}
+
+	.testi-carousel .owl-dots,
+	.clients-carousel .owl-dots,
+	.testi-carousel-three .owl-dots {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -60px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.testi-carousel .owl-dot,
+	.clients-carousel .owl-dot,
+	.testi-carousel-three .owl-dot {
+		width: 16px;
+		height: 16px;
+		background-color: #ddd;
+		display: inline-block;
+		margin: 0 6px;
+		text-align: center;
+		border-radius: 50%;
+	}
+
+	.testi-carousel .owl-dot.active,
+	.clients-carousel .owl-dot.active,
+	.testi-carousel-three .owl-dot.active {
+		background-color: blueviolet;
+	}
+
+	@media only screen and (min-width: 360px) and (max-width: 479px) {
+		.testimonial {
+			padding: 70px 0 130px;
+		}
+	}
+
+	@media only screen and (min-width: 320px) and (max-width: 359px) {
+		.testimonial {
+			padding: 70px 0 130px;
+		}
+
+		.single-box {
+			padding: 50px 0 40px;
+		}
+
+		.single-box .img-area {
+			width: 100%;
+			float: none;
+		}
+
+		.single-box .content {
+			width: 100%;
+			float: none;
+		}
+	}
+
+	/* /* * {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: sans-serif;
+	} */
+
+	html,
+	body {
+		/* height: 100%; */
+		/* width: 100%; */
+		/* background: #3498db; */
+
+		background: linear-gradient(rgb(255, 253, 253), rgb(152, 181, 202));
+
+	}
+
+	nav {
+		padding: 10px 30px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: #eef1f3;
+		position: relative;
+		height: 90px;
+	}
+
+	.logo {
+		color: #cf3030;
+	}
+
+	nav ul {
+		display: flex;
+		gap: 30px;
+		align-items: center;
+	}
+
+	nav ul li {
+		list-style-type: none;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: #8f4242;
+	}
+
+	.menu-icon {
+		display: none;
+	}
+
+	.menu-icon i {
+		color: #ca3838;
+		font-size: 30px;
+	}
+
+	@media (max-width:600px) {
+		nav ul {
+			position: absolute;
+			top: 70px;
+			left: 0;
+			right: 0;
+			flex-direction: column;
+			text-align: center;
+			background: white;
+			gap: 0;
+			overflow: hidden;
+			font-size: 20px;
+			font-weight: 10px;
+		}
+
+		nav ul li {
+			padding: 20px;
+			padding-top: 0;
+
+		}
+
+		.menu-icon {
+			display: block;
+		}
+
+		#menuList {
+			transition: all 0.5s;
+		}
+	}
+
+	.left img {
+
+		height: 80px;
+		width: 210px;
+	}
+
+	li a:hover {
+		color: red;
+		font-size: 30px;
+	}
+
+	.img {
+		height: 300px;
+		width: 300px;
+		margin-top: 30px;
+		margin-left: 70px;
+		margin-right: 30px;
+
+	}
+
+	p {
+		margin-right: 70px;
+		margin-top: 30px;
+		font-size: 20px;
+		font-style: italic;
+		position: relative;
+		box-sizing: border-box;
+		display: inline-block;
+	}
+
+	@keyframes flip {
+
+		0%,
+		80% {
+			transform: rotateY(360deg)
+		}
+	}
+
+	*,
+	*:before,
+	*:after {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+
+
+	.popup {
+		background-color: #ffffff;
+		height: 450px;
+		width: 650px;
+		padding: 30px 40px;
+		position: absolute;
+		position: fixed;
+		transform: translate(-50%, -50%);
+		left: 50%;
+		top: 50%;
+		border-radius: 8px;
+		font-family: "Poppins", sans-serif;
+		display: none;
+		text-align: left 30px;
+	}
+
+	.popup button {
+		display: block;
+		margin: 0 0 20px auto;
+		background-color: transparent;
+		font-size: 30px;
+		color: #c5c5c5;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		margin-top: auto;
+	}
+
+	.popup p {
+		font-size: 14px;
+		text-align: justify;
+		margin: 20px 0;
+		line-height: 25px;
+	}
+
+	@media (max-width: 768px) {
+		.popup {
+			width: 90%;
+			/* Makes the popup use more of the screen on small devices */
+			padding: 20px;
+			/* Adjust padding */
+		}
+
+		nav {
+			height: auto;
+			/* Adjust nav height for smaller screens */
+			flex-direction: column;
+			/* Stack logo and menu vertically */
+		}
+
+		nav ul {
+			flex-direction: column;
+		}
+	}
+</style>
+
+<body>
+
+	<nav>
+		<div class="logo">
+			<div class="left"><img src="images/logo-no-background.png" alt="class logo"></div>
+		</div>
+		<ul id="menuList">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about page.html">About</a></li>
+			<li><a href="Services.html">Services</a></li>
+			<li><a href="digital college.html">Digtal College</a></li>
+			<li><a href="Contact.html">Contact</a></li>
+		</ul>
+		<div class="menu-icon">
+			<i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+		</div>
+	</nav>
+	<div class="popup">
+		<button id="close">&times;</button>
+		<form class="form" action="https://formsubmit.co/ceae66780c6b6f7373a7bdb345b4f241" method="POST">
+			<label for="fname"> Name</label>
+			<input type="text" id="fname" name=" Name" placeholder="Your Name..">
+
+			<!-- <label for="lname">Email</label>
+			<input type="text" id="lname" name=" Email ID " placeholder="Your Email ID.."> -->
+
+			<label for="lname">Number</label>
+			<input type="text" id="lname" name="Number" placeholder="Your Number...">
+
+
+			<label for="Course">Courses</label>
+			<select id="Course" name="Course">
+				<option value="bca">MS-CIT</option>
+				<option value="mca">PROGRAMMING</option>
+				<option value="mba">GRAPHIC DESIGNING</option>
+				<option value="bca">2D AND 3D DESIGNING</option>
+				<option value="mca">ACCOUNTING & MANAGEMENT </option>
+				<option value="mba">COURSES FOR Jr CODER</option>
+				<option value="bca">DIGITAL MARKETING</option>
+			</select>
+
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+
+
+	<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+
+	<table cellspacing="10">
+		<tr>
+			<td>
+				<img class="img" src="images/edu.jpg" alt="Longtail boat in Thailand">
+			</td>
+			<td>
+
+				<p>
+
+					<strong> Divine Educational Solutions</strong>, a computer teaching institute. The <strong>
+						owner
+						Mrs. Mariam Arkate</strong> follows
+					the footsteps of her mother. Her mother was very keen to educate the girl. She said that girls
+					should be well educated. As the up bringing of the child is totally on the mother rather than
+					father. If the mother is well educated, she can help the child to cross all the hurdles in life.
+					<br><br>
+					A vision seen by the 3 main pillars of our family,<strong> Mr. Husain Arkate, (Late) Mrs. Halima
+						Arkate and
+						(Late) Mr. Nooruddin Arkate</strong> about computer literacy for the future generation. Back
+					in
+					2000, a first
+					step was initiated in rural areas in the name of Creative Technologies. The love with the native
+					place, the initiative was taken. In the past 25 years, thousands of students have benefited with
+					the
+					computer skills in different sectors and successfully working. <br><br>
+					As time passed, a new setup was initiated in <strong> Mumbai (Jogeshwari Area), as Divine
+						Educational
+						Solutions</strong>, with the computer literacy and skill development programme for the last
+					10
+					years. With
+					computer literacy, it has been transformed to Digital College (A dream of Mr. Nooruddin Arkate
+					to
+					build a college). <br><br>
+					The Arkate family holds a good place in society, with all the members of the family , engineers
+					and
+					doctors and other graduates. This family is always thinking about the uplift of education in
+					society. If the people in the society are educated, this will boost the development of the
+					nation.
+				</p>
+
+			</td>
+		</tr>
+	</table>
+	<!-- Testimonial  -->
+	<div class="slider">
+		<div class="slides">
+			<div class="slide">
+				<div class="testimonial">
+					<img src="images/anuu.jpg" alt="John Doe">
+					<h3>Anam Parveen</h3>
+					<p>"Great experience with this service. Highly recommended!"</p>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="testimonial">
+					<img src="https://via.placeholder.com/100" alt="John Doe">
+					<h3>John Doe</h3>
+					<p>"Great experience with this service. Highly recommended!"</p>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="testimonial">
+					<img src="https://via.placeholder.com/100" alt="John Doe">
+					<h3>John Doe</h3>
+					<p>"Great experience with this service. Highly recommended!"</p>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="testimonial">
+					<img src="https://via.placeholder.com/100" alt="John Doe">
+					<h3>John Doe</h3>
+					<p>"Great experience with this service. Highly recommended!"</p>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="testimonial">
+					<img src="https://via.placeholder.com/100" alt="Jane Smith">
+					<h3>Jane Smith</h3>
+					<p>"I'm amazed by the quality of work provided. Will definitely use it again."</p>
+				</div>
+			</div>
+			<!-- Add more slides here -->
+		</div>
+	</div>
+
+
+	<!-- <section class="testimonial">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+					<div class="sec-heading text-center">
+						<h6>" Student's Says "</h6>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="clients-carousel owl-carousel">
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/anuu.jpg"></div>
+						<div class="content">
+							<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, doloribus minima
+								praesentium laborum ea earum."</p>
+							<h4>Anam Parveen</h4>
+							<h6>BCA Student</h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/New folder/Javed uncle.jpeg">
+						</div>
+						<div class="content">
+							<p>" BSc-IT (CSA) <br> Learning Was Fun With All Practical Knowledge. All Ma'am and Sir
+								Were very Helpful. They Cleared All My Doubts, May it be a silly. Today I am a
+								successfull Hardware Engineer "</p>
+							<h4>Javed Khan</h4>
+							<h6>Hardware Engineer</h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/New folder/Oves Bhai .jpeg">
+						</div>
+						<div class="content">
+							<p>"I had left my studys after 12th class then I met Ma'am she guided me with value of
+								Education with her guidance I talk admission in B.com as time passed the intrest of
+								coding language increase then I through a become a programmer again Ma'am Guided me join
+								MCA."</p>
+							<h4>Oves Seliya</h4>
+							<h6>MCA Student</h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/New folder/Husain.jpeg"></div>
+						<div class="content">
+							<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, doloribus minima
+								praesentium laborum ea earum."</p>
+							<h4>Matt Demon</h4>
+							<h6>Husain</h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/anjali.png"></div>
+						<div class="content">
+							<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, doloribus minima
+								praesentium laborum ea earum."</p>
+							<h4>Anjali Poojari</h4>
+							<h6>Teacher + Graphic Designer</h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/boy1.jpg"></div>
+						<div class="content">
+							<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, doloribus minima
+								praesentium laborum ea earum."</p>
+							<h4>Matt Demon</h4>
+							<h6>Designation Here</h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/ALMAS.PNG"></div>
+						<div class="content">
+							<p>"The supportive environment at index Education Solutions made my transition from being
+								a student of basic computer course to MCA seamless. The institute's focus on practical
+								skills alongside theoretical knowledge gave me a competitive edge, enabled me to kick
+								start my career in MCA program."</p>
+							<h4>Almas Shaikh</h4>
+							<h6>MCA Student </h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/girl.jpg"></div>
+						<div class="content">
+							<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, doloribus minima
+								praesentium laborum ea earum."</p>
+							<h4>Khudaija Patel </h4>
+							<h6>Designation Here</h6>
+						</div>
+					</div>
+					<div class="single-box">
+						<div class="img-area"><img alt="" class="img-fluid" src="images/New folder/Qaif.jpeg"></div>
+						<div class="content">
+							<span class="rating-star"><i class="icofont-star"></i><i class="icofont-star"></i><i
+									class="icofont-star"></i><i class="icofont-star"></i><i
+									class="icofont-star"></i></span>
+							<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, doloribus minima
+								praesentium laborum ea earum."</p>
+							<h4>Qaif Kapadiya</h4>
+							<h6>MS-CIT Student</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	<div>
+		<footer class="footer-distributed">
+
+			<div class="footer-left">
+				<h3>Divine <span>Educational Solutions</span></h3>
+
+				<p class="footer-links">
+					<a href="index.html">Home</a>
+					|
+					<a href="about page.html">About</a>
+					|
+					<a href="Contact.html">Contact</a>
+					|
+					<a href="digital college.html">Digital College</a>
+				</p>
+
+				<p class="footer-class-name">Copyright © 2024 <strong>Divine Educational Solutions</strong> All rights
+					reserved</p>
+			</div>
+			<div class="footer-center">
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Jogeshwari West</span>
+						Mumbai</p>
+				</div>
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+91 9819358373 || +91 7666555191</p>
+				</div>
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">divineedusol02@gmail.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="right"><img src="images/classlogo.png.jpeg" alt="class logo"></div>
+
+				<!-- <p class="footer-class-about">
+                    <span>About the Class</span>
+                    <strong>Index Educational Solutions</strong> . best learning computer course. The Only Course which
+                    teaches Office Skills, Smart Typing Skills, 21st Century Daily Life Skills, 21st Century Study
+                    Skills,
+                    Cyber Security Skills & Netiquettes, Basic IT Awareness.. and much more
+                </p> -->
+				<br><br>
+
+
+				<div class="footer-icons"><br><br>
+					<a href="www.facebook.com/indexeducationalsolutions"><i class="fa"><img src="images/fblogo.png"
+								alt=""></i></a>
+					<a href="https://www.instagram.com/index_edusolution?igsh=ZzYxdHZzN2xtNzV1"><i class="fa"><img
+								src="images/insta.png" alt=""></i></a>
+					<a href="https://web.telegram.org/a/#-1001399063675"><i class="fa"><img src="images/Telegram.png"
+								alt=""></i></a>
+					<a href="https://whatsapp.com/channel/0029Va40AAGAO7RBBrO3i23R"><i class="fa "><img
+								src="images/whatsup.png" alt=""></i></a>
+					<a href="https://youtube.com/@Dvine.edusol?si=sEnB3v8LerWYayMV"><i class="fa"></i><img
+							src="images/youtube.png" alt=""></a>
+				</div>
+			</div>
+	</div>
+	</footer>
+	</div>
+	<script>
+		let menuList = document.getElementById("menuList")
+		menuList.style.maxHeight = "0px";
+
+		function toggleMenu() {
+			if (menuList.style.maxHeight == "0px") {
+				menuList.style.maxHeight = "300px";
+			}
+			else {
+				menuList.style.maxHeight = "0px";
+			}
+		}
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
+	</script>
+	<script>
+		$('.clients-carousel').owlCarousel({
+			loop: true,
+			nav: false,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			smartSpeed: 450,
+			margin: 30,
+			responsive: {
+				0: {
+					items: 1
+				},
+				768: {
+					items: 2
+				},
+				991: {
+					items: 2
+				},
+				1200: {
+					items: 2
+				},
+				1920: {
+					items: 2
+				}
+			}
+		});
+	</script>
+	<script>
+		let menuList = document.getElementById("menuList")
+		menuList.style.maxHeight = "0px";
+
+		function toggleMenu() {
+			if (menuList.style.maxHeight == "0px") {
+				menuList.style.maxHeight = "300px";
+			}
+			else {
+				menuList.style.maxHeight = "0px";
+			}
+		}
+
+	</script>
+	<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+
+   
+
+    .column {
+      float: left;
+      width: 400px;
+      height: 400px;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      margin: 15px;
+      padding: 0 8px;
+     
+      
+    }
+ 
+    .card {
+      box-shadow: 0 29px 10px 0 rgba(0, 0, 0, 0.2);
+      margin-bottom: 50px;
+
+    }
+    .card img{
+      height: 250px;
+      width: 30px;
+    }
+
+
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+      height: 100px;
+    }
+
+    .container { 
+      padding: 0 16px;
+    }
+
+    .container::after,
+    .row::after{
+      content: "";
+      clear: both;
+      display: table;
+      
+    }
+
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="about-section">
+    <h1>All About index</h1>
+    <p>Some text about who we are and what we do.</p>
+    <p>Resize the browser window to see that this page is responsive by the way.</p>
+  </div>
+
+  <h2 style="text-align:center">Our Courses</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="images/programming.png" alt="Jane" style="width:100%">
+        <div class="container">
+          <h2>Programming</h2>
+          
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="images/jrcoderr.png" alt="Mike" style="width:100%">
+        <div class="container">
+          <h2>Jr Coder</h2>
+         
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="column">
+      <div class="card">
+        <img src="images/graphic.png" alt="Mike" style="width:100%">
+        <div class="container">
+          <h2>Graphic Designing</h2>
+         
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="images/2d3d.png" alt="Mike" style="width:100%">
+        <div class="container">
+          <h2>2d And 3D Designing</h2>
+        
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="images/DM.png" alt="Mike" style="width:100%">
+        <div class="container">
+          <h2>Digital Marketing</h2>
+        
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="images/Digital Security.png" alt="Mike" style="width:100%">
+        <div class="container">
+          <h2>Digital Securty</h2>
+         
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html> -->

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .slider-container {
+        width: 80%;
+        margin: 50px auto;
+        overflow: hidden;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .slide img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .slide h2 {
+        margin: 0;
+    }
+
+    .slide p {
+        margin: 10px 0;
+    }
+</style>
+
+<body>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="images/anuu.jpg" alt="Student 1">
+                <h2>Anam Parveen</h2>
+                <p>BCA Student</p>
+                <p>"I studying BCA 2nd year. My all the coding concept are very much clear. I recommend all to join
+                    BCA."</p>
+            </div>
+            <div class="slide">
+                <img src="images/anjali.png" alt="Student 1">
+                <h2>Anjali Poojari</h2>
+                <p>Teacher + Graphic Designer</p>
+                <p>"Completed my MS-CIT and Diploman in Graphic Desigining. Now I teach the student the same, and for
+                    passive income I design T-Shirts. Divine Educational Solutions has guided me towards this beautiful
+                    platform."</p>
+            </div>
+            <div class="slide">
+                <img src="images/ALMAS.PNG" alt="Student 1">
+                <h2>Almas Shaikh</h2>
+                <p>MCA</p>
+                <p>"The supportive environment at Divine Educational Solutions made my transition from being
+                    a student of basic computer course to MCA seamless. The institute's focus on practical
+                    skills alongside theoretical knowledge gave me a competitive edge, enabled me to kick
+                    start my career in MCA program."</p>
+            </div>
+            <div class="slide">
+                <img src="images/New folder/Javed uncle.jpeg" alt="Student 1">
+                <h2>Javed Khan</h2>
+                <p>Hardware Engineer</p>
+                <p>"BSc-IT (CSA) <br> Learning Was Fun With All Practical Knowledge. All Ma'am and Sir
+                    Were very Helpful. They Cleared All My Doubts, May it be a silly. Today I am a
+                    successfull Hardware Engineer."</p>
+            </div>
+            <div class="slide">
+                <img src="images/New folder/Oves Bhai .jpeg" alt="Student 1">
+                <h2>Oves Seliya</h2>
+                <p>Web Development Course</p>
+                <p>"I had left my studys after 12th class then I met Ma'am she guided me with value of
+                    Education with her guidance I talk admission in B.com as time passed the intrest of
+                    coding language increase then I through a become a programmer again Ma'am Guided me join
+                    MCA."</p>
+            </div>
+            <div class="slide">
+                <img src="images/New folder/Husain.jpeg" alt="Student 2">
+                <h2>Jane Smith</h2>
+                <p>BBA</p>
+                <p>"The course content was comprehensive and well-structured."</p>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+
+        let currentIndex = 0;
+        const slideWidth = slides[0].clientWidth;
+
+        function goToSlide(index) {
+            if (index < 0 || index >= slides.length) return;
+
+            currentIndex = index;
+            const offset = -currentIndex * slideWidth;
+            slider.style.transform = `translateX(${offset}px)`;
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            }
+            goToSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = slides.length - 1;
+            }
+            goToSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000); // Auto slide every 3 seconds
+
+    </script>
+</body>
+
+</html>

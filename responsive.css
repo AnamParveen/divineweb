@@ -1,0 +1,29 @@
+/* Media Query for responsive design */
+@media screen and (max-width: 768px) {
+    .nav-list {
+      text-align: center;
+    }
+  
+    .nav-item {
+      display: block;
+    }
+  
+    /* Hide the checkbox */
+    #menu-toggle {
+      display: none;
+    }
+  
+    /* Show the menu when checkbox is checked */
+    #menu-toggle:checked ~ .nav-list {
+      display: block;
+    }
+  
+    /* Style for the menu icon */
+    .menu-icon {
+      display: block;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+  
